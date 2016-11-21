@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ns:MDIWindow xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			  xmlns:s="library://ns.adobe.com/flex/spark" 
+			  xmlns:mx="library://ns.adobe.com/flex/mx" 
+			  xmlns:ns="http://code.google.com/p/flexlib/" 
+			  layout="vertical" width="900" height="600" xmlns:components="components.*">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<s:HGroup width="100%" paddingTop="8">
+		<components:ServiceLabel width="80" styleName="styleHeader" text="Cliente:"/>
+		<components:TextInput id="txtNomeEmpresa" styleName="styleHeader" text="" width="100%"/>
+		<components:ServiceButton tipoBotao="buscar" skinClass="Skins.ButtonSkin"/>
+	</s:HGroup>
+	<s:HGroup width="100%" paddingTop="5">
+		<components:ServiceLabel width="80" styleName="styleHeader" text="Analista:"/>
+		<components:TextInput id="txtAnalistaResp" styleName="styleHeader" text="" width="100%"/>
+		<components:ServiceButton tipoBotao="editar" skinClass="Skins.ButtonSkin"/>
+	</s:HGroup>
+	<s:HGroup width="100%" paddingTop="5">
+		<s:Spacer width="100%"/>
+		<components:ServiceButton tipoBotao="limpar" skinClass="Skins.ButtonSkin"/>
+		<components:ServiceButton tipoBotao="visualizar" label="Gerar" skinClass="Skins.ButtonSkin"/>
+	</s:HGroup>
+	<mx:HRule width="100%"/>
+	<mx:AdvancedDataGrid id="adgRelatorioAluno" width="100%" styleName="styleHeader" height="100%" sortExpertMode="true">
+		<mx:groupedColumns>
+			<mx:AdvancedDataGridColumn headerText="Aluno"/>
+			<mx:AdvancedDataGridColumn headerText="Cargo"/>
+			<mx:AdvancedDataGridColumn headerText="Cadastros"/>
+			<mx:AdvancedDataGridColumn headerText="Compras"/>
+			<mx:AdvancedDataGridColumn headerText="Operacional"/>
+			<mx:AdvancedDataGridColumn headerText="Faturamento"/>
+			<mx:AdvancedDataGridColumn headerText="Estoque"/>
+			<mx:AdvancedDataGridColumn headerText="Financeiro"/>
+			<mx:AdvancedDataGridColumn headerText="Suporte"/>
+			<mx:AdvancedDataGridColumn headerText="HelpDesk"/>
+		</mx:groupedColumns>
+	</mx:AdvancedDataGrid>	
+	<s:HGroup width="100%">
+		<components:DateFieldCustom id="txtDataRelatorio" styleName="styleHeader" paddingLeft="10"/>
+		<s:Spacer width="100%"/>
+		<components:ServiceButton tipoBotao="excel" label="Exportar" skinClass="Skins.ButtonSkin"/>
+	</s:HGroup>
+</ns:MDIWindow>
